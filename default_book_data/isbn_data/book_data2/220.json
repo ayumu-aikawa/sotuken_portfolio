@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784873117959,
+    "タイトル": "GitHubツールビルディング",
+    "サブタイトル": "GitHub APIを活用したワークフローの拡張とカスタマイズ",
+    "著者": "Chris Dawson,Ben Straub,池田 尚史,笹井 崇司",
+    "出版社": "株式会社オーム社",
+    "説明": "GitHub APIを用いたワークフロー構築実践ガイド！\n本書は、GitHubを使ってワークフローを構築する書籍です。8割程度の主要APIを網羅しており、それらを用いた自動デプロイのようなワークフロー構築、Android用のGitとGitHubのクライアント作成といった具体的なユースケースシナリオに基づき実装していきます。GitHub Enterpriseについての記述もあり、GitHub.comだけでなく社内でEnterpriseを使っている人にもどちらにも価値がある本です。",
+    "言語": "jpn",
+    "ページ数": "320",
+    "発売日": "20170510",
+    "レーベル": "",
+    "値段": 3200,
+    "画像URL": "http://books.google.com/books/content?id=ECVKtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "大分類": 2,
+    "中分類": 6,
+    "小分類": 220
+}

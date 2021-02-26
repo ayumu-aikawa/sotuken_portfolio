@@ -1,1 +1,0 @@
-# sotuken_portfolio

@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784873117195,
+    "タイトル": "入門React",
+    "サブタイトル": "コンポーネントベースのWebフロントエンド開発",
+    "著者": "Frankie Bagnardi,Jonathan Beebe,Richard Feldman,Tom Hallett,Simon Hojberg,Karl Mikkelsen,宮崎 空",
+    "出版社": "オーム社",
+    "説明": "本邦初のReact解説書！ すべての情報が一冊にコンパクトにまとまっている！\nFacebookが開発したJavaScriptライブラリ「React」の解説書。本書では、数多くのサンプルを用いてReact.jsのすべての側面を解説します。1章から7章でReactコンポーネントの作成と合成を学び、Reactの基本的な使い方を理解します。8章から13章ではワンランク上のコンポーネント作成について学びます。14章と15章ではReactと共に使用して堅牢なアプリケーションを実装するためのツールについて学びます。最後に16章と17章でReactを使ってアプリケーションを実際に作成します。読者はコンポーネントベースの最新のフロントエンド開発についての体系的な知識と技術を身につけることができます。",
+    "言語": "jpn",
+    "ページ数": "280",
+    "発売日": "20150403",
+    "レーベル": "",
+    "値段": 2600,
+    "画像URL": "http://books.google.com/books/content?id=mRlbrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "大分類": 9,
+    "中分類": 5,
+    "小分類": 804
+}

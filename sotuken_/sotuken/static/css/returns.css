@@ -1,0 +1,244 @@
+ul {
+  list-style: none;
+}
+.btn{
+  opacity: 0.9;
+  text-align: center;
+  letter-spacing: 1em;
+  text-indent: 1em;
+}
+.display{
+	margin: 0 8%;
+	padding: 0em 1em;
+	color: #474747;
+	background: whitesmoke;/*背景色*/
+	opacity: 0.9;
+	border-left: double 7px  #4ec4d3;/*左線*/
+	border-right: double 7px  #4ec4d3;/*右線*/
+}
+.display tr{
+	padding: 10px;
+	border-top: 1.5px dotted #4ec4d3;
+	border-bottom: 1.5px dotted #4ec4d3;
+	font-size: 15px;
+}
+.display .table tr{
+	padding: 20px 10px;
+}
+.display .table tr:hover:not(.not_color){
+	background-color: #e4f4f5;
+}
+.display .table .not_color{
+	border-bottom: double 2px #4ec4d3;
+	border-top: double 1px #4ec4d3;
+}
+.display .table{
+	border: double 2px #4ec4d3;
+}
+.display .table th{
+	border-right: 1px solid #4ec4d3;
+	border-left: 1px solid #4ec4d3;
+	text-align: center;
+}
+.display .table td{
+	padding: 20px 10px;
+	vertical-align: middle;
+	border-right: 1px solid #4ec4d3;
+	border-left: 1px solid #4ec4d3;
+}
+.display a{
+	padding: 10px;
+	font-size: 15px;
+}
+.display .title{
+	padding: 15px;
+	font-size: 18px;
+	border-bottom: double 2px #4ec4d3;
+}
+.display .number{
+	padding: 10px 0 20px 0;
+}
+.form .btn{
+	margin-top: 10px;
+}
+.table td:nth-child(1) {
+	text-align: center;
+}
+h4{
+  padding: 1em 0 0 0;
+}
+.display .table{
+  border: 2px solid #4ec4d3;
+}
+.display tr td {
+  border: 1px solid #4ec4d3;
+}
+.display .message{
+  display: flex;
+  justify-content: center;
+}
+.display .message ul{
+  padding-inline-start: 0px;
+}
+.display .message ul li{
+  width: 100%;
+}
+#all{
+  margin: 0.2em;
+}
+.display .allselect{
+  text-align: right;
+  font-size: 17px;
+}
+.alert{
+  margin: 0px;
+}
+@media screen and (min-width: 1281px) {
+  .btn{
+    margin: 30px 30px 30px 30px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1280px){
+  .btn{
+    margin: 20px 20px 20px 20px;
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 767px) {
+  .display{
+    margin: 0 3%;
+    padding: 0.1em 1em 1em 1em;
+  }
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+  }
+  .form{
+    margin: 3% 0;
+  }
+  .display .table td{
+    padding: 10px 10px;
+  }
+  .container {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 660px) {
+  .display{
+    margin: 0 3%;
+    padding: 0.1em 1em 1em 1em;
+  }
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+  }
+  .form{
+    margin: 3% 0;
+  }
+  .display .table td{
+    padding: 10px 10px;
+  }
+  .container {
+    max-width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 767px){
+  .display td:last-child{
+    width: 4em;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+	th, td {
+		display: block;
+		width: 100%;
+		text-align: center;
+    border-bottom: solid 1px #4ec4d3;
+  }
+  .table>tbody+tbody{
+    border-top: 2px solid #4ec4d3;
+  }
+  .display tr{
+    border-bottom: 1px solid #4ec4d3;
+    border-top: 2px solid #4ec4d3;
+  }
+  .display td:last-child{
+    border-bottom: none;
+  }
+  .table>tbody+tbody:last-child{
+    border-top: none;
+  }
+  table thead th {
+    display: none;
+  }
+  table td[data-title]::before {
+    color: #4ec4d3;
+    content: attr(data-title) " ";
+  }
+  table .br::before{
+    content: "\A";
+    white-space: pre;
+  }
+}
+/* チェックボックス */
+input[type=checkbox] {
+	display: none;
+}
+.card input[type=checkbox] {
+	display: inherit;
+}
+.checkbox {
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 30px;
+	position: relative;
+	width: auto;
+}
+.pc-table .checkbox {
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 16px;
+	position: relative;
+	width: auto;
+  padding-top: 0.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.checkbox::before {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	content: '';
+	display: block;
+	height: 16px;
+	left: 8px;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+	width: 16px;
+}
+.checkbox::after {
+	border-right: 6px solid #00cccc;
+	border-bottom: 3px solid #00cccc;
+	content: '';
+	display: block;
+	height: 20px;
+	left: 12px;
+	margin-top: -16px;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: rotate(45deg);
+	width: 13px;
+}
+input[type=checkbox]:checked + .checkbox::before {
+	border-color: #666;
+}
+input[type=checkbox]:checked + .checkbox::after {
+	opacity: 1;
+}

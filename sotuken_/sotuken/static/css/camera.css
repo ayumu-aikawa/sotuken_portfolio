@@ -1,0 +1,192 @@
+/* PC用 */
+@media screen and (min-width: 769px){
+    /* カメラ画面 */
+    #webcodecam-canvas, #scanned-img {
+        background-color: #2d2d2d;
+        width: 360px;
+        height: 240px;
+        object-fit: scale-down;
+    }
+    /* 赤枠４つ */
+    .laser-leftTop {
+        top: 100px;
+        left: 25px;
+        border-top: solid red 5px;
+        border-left: solid red 5px;
+    }
+    .laser-leftBottom {
+        bottom: 0;
+        left: 25px;
+        border-bottom: solid red 5px;
+        border-left: solid red 5px;
+    }
+    .laser-rightTop {
+        top: 100px;
+        right: 25px;
+        border-top: solid red 5px;
+        border-right: solid red 5px;
+    }
+    .laser-rightBottom {
+        bottom: 0;
+        right: 25px;
+        border-bottom: solid red 5px;
+        border-right: solid red 5px;
+    }
+}
+
+/* スマホ用 */
+@media screen and (max-width: 768px) and (min-width: 401px){
+    #webcodecam-canvas, #scanned-img {
+        background-color: #2d2d2d;
+        width: 240px;
+        max-height: auto;
+        object-fit: cover;
+    }
+    .form-group{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .btn{
+        margin-top: 10px;
+    }
+    .navbar-form{
+        margin-top: 5px;
+    }
+
+    .laser-leftTop {
+        top: 175px;
+        left: 25px;
+        border-top: solid red 5px;
+        border-left: solid red 5px;
+    }
+
+    .laser-leftBottom {
+        bottom: 0;
+        left: 25px;
+        border-bottom: solid red 5px;
+        border-left: solid red 5px;
+    }
+
+    .laser-rightTop {
+        top: 175px;
+        right: 25px;
+        border-top: solid red 5px;
+        border-right: solid red 5px;
+    }
+
+    .laser-rightBottom {
+        bottom: 0;
+        right: 25px;
+        border-bottom: solid red 5px;
+        border-right: solid red 5px;
+    }
+    .panel .panel-body {
+        padding: 15px 9px;
+    }
+}
+/* 小スマホ */ 
+@media screen and (max-width: 400px) {
+    #webcodecam-canvas, #scanned-img {
+        background-color: #2d2d2d;
+        width: 200px;
+        max-height: auto;
+        object-fit: cover;
+    }
+    .form-group{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .btn{
+        margin-top: 10px;
+    }
+    .navbar-form{
+        margin-top: 5px;
+    }
+
+    .laser-leftTop {
+        top: 175px;
+        left: 25px;
+        border-top: solid red 5px;
+        border-left: solid red 5px;
+    }
+
+    .laser-leftBottom {
+        bottom: 0;
+        left: 25px;
+        border-bottom: solid red 5px;
+        border-left: solid red 5px;
+    }
+
+    .laser-rightTop {
+        top: 175px;
+        right: 25px;
+        border-top: solid red 5px;
+        border-right: solid red 5px;
+    }
+
+    .laser-rightBottom {
+        bottom: 0;
+        right: 25px;
+        border-bottom: solid red 5px;
+        border-right: solid red 5px;
+    }
+
+    .panel .panel-body {
+        padding: 15px 9px;
+    }
+}
+/* 共通 */
+
+.thumbnail {
+    border: 0;
+    background-color: rgba(255,255,255,0);
+}
+/* カメラ選択 */
+#camera-select {
+    display: inline-block;
+    width: auto;
+}
+/* カメラ画面周り */
+.well {
+    position: relative;
+    display: inline-block;
+}
+/* メイン画面 使ってはいない*/
+.panel{
+    background-color: rgba(255,255,255,0);
+}
+/* メイン画面上部 */
+.panel-heading {
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(122, 208, 248, 0);
+}
+/* メイン画面 */
+.container {
+    max-width: 99%;
+}
+
+button {
+    outline: none !important;
+}
+/* 赤枠 */
+.scanner-laser {
+    position: absolute;
+    margin: 40px;
+    height: 30px;
+    width: 30px;
+    opacity: 0.5;
+}
+
+/* カメラ画面の黒 */
+#webcodecam-canvas {
+    background-color: #272822;
+}
+
+#scanned-QR{
+    word-break: break-all;
+}
+
+ul {
+    list-style: none;
+  }

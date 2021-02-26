@@ -1,0 +1,60 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>{{title}}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link href="{% static 'css/returns.css' %}" rel="stylesheet">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/button.css' %}" rel="stylesheet">
+    <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+    <link href="{% static 'css/contact.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $(".close").click(function(){
+                $(".alert").hide();
+            })
+        })
+    </script>
+</head>
+<body class="container">
+  {% include 'header.html' %}
+    <h2 class="display-4" align="center">
+      {{title}}</h2>
+    <div class="form-row form">
+      <p class="text-muted">{{msg1}}</p>
+      <form action = "{% url 'contact_comp' %}" method ="post" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <textarea class="control-labe ef" name = "contents" rows="6" required = "true"></textarea>
+          <label>内容</label>
+          <!--span class="focus_line"></span-->
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt button_c">
+          <button type = "button" onclick="history.back()" class="btn btn-primary">{{back}}</button>
+          <button type = "submit" class="btn btn-success">{{yes}}</button>
+        </div>
+      </form>
+
+      <!--div class="button_c">
+        <form action = "{% url 'manage_bookdata_delete' %}" method ="post" class="form-horizontal">
+          {% csrf_token %}
+          <div style="display:none">
+            <input id= "smallcat" name = "smallcat" value= {{bookobj.smallcat}}>
+          </div>
+          <button type = "submit" class="btn btn-warning word4">{{p_delete}}</button>
+        </form>
+      </div-->
+
+    </div>
+    <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+</body>
+
+</html>

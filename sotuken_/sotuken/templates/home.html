@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}トップページ{% endblock %}
+{% block styles %}<link href="{% static 'css/home.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <h2>ようこそ {{ user.name }}さん!</h2>
+  <!--button type="button" class="btn btn-primary btn_long"onclick="location.href='{% url 'logout' %}'">ログアウト</button-->
+  <div class="btn_home">
+    <button type="button" class="btn btn-success"onclick="location.href='{% url 'book' %}'">図書
+    </button>
+    <button type="button" class="btn btn-success btn_long"onclick="location.href='{% url 'profile' %}'">マイページ
+    </button>
+  </div>
+{% else %}
+  <h2>ログインしてください</h2>
+  <div class="btn_login">
+    <button type="button" class="btn btn-success btn_long"onclick="location.href='{% url 'login' %}'">ログイン
+    </button>
+  </div>
+{% endif %}
+{% endblock %}

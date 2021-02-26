@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784798149813,
+    "タイトル": "Xamarinネイティブによるモバイルアプリ開発 C#によるAndroid/iOS UI制御の基礎",
+    "サブタイトル": "",
+    "著者": "青柳 臣一",
+    "出版社": "翔泳社",
+    "説明": "AndroidもiOSも。\nC#を使ったクロスプラットフォーム開発に挑戦！\n\nこれまで別々の言語や環境で開発していたAndroid／iOSアプリを\n共通の言語（C#）や環境（.NET Framework）で作成する\n注目の開発環境Xamarin。\n\nマイクロソフトMVP受賞経験のある著者が、豊富なアプリケーション開発の\n経験を活かし、すべてのモバイルアプリ開発者に向けてXamarinネイティブ\nによるクロスプラットフォーム開発を徹底解説しました。\n\n本書は「Xamarinとは何か」にはじまり、汎用ライブラリMVVMCrossを\n使って、本格的なクロスプラットフォームを開発するノウハウまで、\nミニサンプルアプリを作りながらわかりやすく学ぶことができます。\n\nまた、特にAndroid／iOS開発経験のある読者のために、\nJavaやObjective-C、Swiftと比較しながらの解説も行っています。\n\n現場の開発者のための、Xamarinを使ったクロスプラットフォーム開発を\nスムーズに学べる一冊です。\n\n～～～本書の内容～～～\n\nPart 1　Xamarinの基礎\n-- Chapter 1　Xamarinについて学ぼう\n\n\nPart 2　Xamarinでアプリを作る\n-- Chapter 2　Visual StudioでAndroidキッチンタイマーを作ろう\n-- Chapter 3　Visual StudioでiOSキッチンタイマーを作ろう\n-- Chapter 4　同一プロジェクトでAndroid/iOSアプリを作ろう\n\n\nPart 3　MVVMCrossを使う\n-- Chapter 5　MVVMCrossについて学ぼう\n-- Chapter 6　MVVMCrossでアプリを作ろう（準備編）\n-- Chapter 7　MVVMCrossでアプリを作ろう（データバインディング編）\n-- Chapter 8　MVVMCrossを使いこなそう\n\n\n",
+    "言語": "jpn",
+    "ページ数": "392",
+    "発売日": "20170915",
+    "レーベル": "",
+    "値段": 3480,
+    "画像URL": "https://cover.openbd.jp/9784798149813.jpg",
+    "大分類": 5,
+    "中分類": 3,
+    "小分類": 139
+}

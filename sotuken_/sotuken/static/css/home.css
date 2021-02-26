@@ -1,0 +1,44 @@
+p{
+  text-align: center;
+}
+.display {
+  text-align: center;
+}
+.btn_home{
+  margin: 2em 0;
+}
+@media screen and (min-width: 1281px) {
+  .btn_home .btn{
+    width: 400px;
+    height: 110px;
+    margin: 30px 30px 30px 30px;
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1280px){
+  .btn_home .btn{
+    width: 300px;
+    height: 80px;
+    margin: 20px 27px 20px 27px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 767px) {
+  .btn_home .btn{
+    width: 350px;
+    height: 80px;
+    margin: 30px 30px;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .btn_home .btn{
+    width: 170px;
+    height: 50px;
+    margin: 30px 35px;
+    font-size: 20px;
+  }
+  body{
+    padding-top: 100px;
+  }
+}

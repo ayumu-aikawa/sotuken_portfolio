@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784844381280,
+    "タイトル": "Deep Learning Javaプログラミング : 深層学習の理論と実装",
+    "サブタイトル": "",
+    "著者": "巣籠 悠輔",
+    "出版社": "（株）インプレス",
+    "説明": "深層学習のアルゴリズムをJavaで実装! 本書では、まず深層学習に関連する機械学習アルゴリズムを復習します。 その後、深層学習アルゴリズムの主要な理論を解説し、 Javaでゼロから実装する方法を示します。 さらに、Javaライブラリを利用した実装方法も解説します。 深層学習用Javaライブラリとして使用するDeeplearning4jは オープンソースの分散処理ソフトウェアApacheSpark/Hadoopに 統合されているものです。 そのほか、人工知能やディープラーニングの変遷や今後の展望について説明し、 番外編としてTheano/TensorFlow/CaffeをPythonで利用する方法も解説します。 ※本書は『JavaDeepLearningEssentials』の翻訳書です。 発行：インプレス",
+    "言語": "jpn",
+    "ページ数": 249,
+    "発売日": "",
+    "レーベル": "Impress top gear",
+    "値段": 3400,
+    "画像URL": "http://books.google.com/books/content?id=U28iDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "大分類": 8,
+    "中分類": 5,
+    "小分類": 418
+}

@@ -1,0 +1,45 @@
+{% block header %}
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- navbar-inverse で黒系ナビゲーションの指定をしています。-->
+  <!-- navbar-fixed-top でヘッダー固定の指定をしています。-->
+  <h3>
+      <a href="{% url 'book' %}">BOOK ON</a>
+  </h3>
+   <nav class="pc-nav">
+      <ul class="menu">
+          <li><a href="{% url 'book' %}">図書</a>
+             <ul class="dropdwn_menu">
+                <li><a class="camera_check" href="#">貸出</a></li>
+                <li><a href="{% url 'returns' %}">返却</a></li>
+                <li><a href="{% url 'search' %}">検索</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'manage' %}">管理</a></li>
+                {% endif %}
+             </ul>
+          </li>
+          <li><a href="{% url 'profile' %}">{{user.shortname}}</a>
+             <ul class="dropdwn_menu">
+                <li><a href="{% url 'lendhistory' %}">貸出履歴</a></li>
+                <li><a href="{% url 'password_change' %}">パスワード変更</a></li>
+                <li><a href="{% url 'contact' %}">お問い合わせ</a></li>
+             </ul>
+          </li>
+          <li><a href="{% url 'logout' %}">ログアウト</a></li>
+      </ul>
+   </nav>
+    <nav class="sp-nav">
+       <li class="close"><span></span></li>
+       <ul>
+          <li><a href="{% url 'book' %}">図書</a></li>
+          <li><a href="{% url 'profile' %}">プロフィール</a></li>
+          <li><a href="{% url 'lendhistory' %}">貸出履歴</a></li>
+          <li><a href="{% url 'contact' %}">お問い合わせ</a></li>
+          <li><a href="{% url 'password_change' %}">パスワード変更</a></li>
+          <li><a href="{% url 'logout' %}">ログアウト</a></li>
+       </ul>
+    </nav>
+   <div id="hamburger">
+      <span></span>
+   </div>
+</header>
+{% endblock %}

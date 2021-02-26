@@ -1,0 +1,19 @@
+#acMenu dt{
+  display:block;
+  width:200px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  border:#5bc0de 1px solid;
+  cursor:pointer;
+ }
+
+#acMenu dd{
+  background:#d9534f;
+  width:200px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  border:#5bc0de 1px solid;
+  display:none;
+}

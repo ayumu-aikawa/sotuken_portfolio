@@ -1,0 +1,123 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{title}}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/button.css' %}" rel="stylesheet">
+    <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+    <link href="{% static 'css/returns.css' %}" rel="stylesheet">
+    <link href="{% static 'css/details.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $(".close").click(function(){
+                $(".alert").hide();
+            })
+        })
+    </script>
+</head>
+    <body class="container">
+      {% include 'header.html' %}
+    <div class="display">
+              <div>
+                <p id="thumbnail"></p>
+              </div>
+              <div class="form-row form">
+                {% if msg1 == "貸出可能" %}
+                <p id="lend1" type="text" name="lend1" align = "center" style="font-size:23px;" >
+                この本の貸出状況 : <span class="label label-success">{{msg1}}</span></p>
+                {% elif msg1 == "貸出中" %}
+                <p id="lend1" type="text" name="lend1" align = "center" style="font-size:23px;" >
+                この本の貸出状況 : <span class="label label-danger">{{msg1}}</span></p>
+                {% else %}
+                <p id="lend1" type="text" name="lend1" align = "center" style="font-size:23px;" >
+                この本の貸出状況 : <span class="label label-success">{{msg1}}</span></p>
+                {% endif %}
+                <!--div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                  <input id="isbn" class="control-label ef" type="number" name="isbn13" value="{{book_data.isbn13}}" disabled>
+                  <label>ISBN(デバッグ用) : </label>
+                </div-->
+                <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                  <input id="title" class="control-label ef" type="text" name="title" value="{{book_data.title_long}}" disabled>
+                  <label>タイトル :</label>
+                </div>
+                <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                  <input id="bigcat" class="control-label ef" type="text" name="bigcat" value="{{bigcat}}" disabled>
+                  <label>大分類 :</label>
+                </div>
+                <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                  <input id="midcat" class="control-label ef" type="text" name="midcat" value="{% for item in midcat_list %}{{item}}&nbsp;{% endfor %}" disabled>
+                  <label>中分類 :</label>
+                </div>
+                <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                  {% if book_data.authors %}
+                  <input id="authors" class="control-label ef" type="text" name="authors" value="{{book_data.authors|safe}}" disabled>
+                  <label>著者 :</label>
+                  {% endif %}
+                </div>
+                <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                  {% if book_data.publisher %}
+                  <input id="publisher" class="control-label ef" type="text" name="publisher" value="{{book_data.publisher|safe}}" disabled>
+                  <label>出版社 :</label>
+                  {% endif %}
+                </div>
+                <details class="col-md-12 col-xs-12"> 
+                  <summary type="text">詳細(クリックで表示)</summary>
+                  <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                    {% if book_data.exp %}
+                      {% if exp_flag == 1 %}
+                        <textarea id="exp" class="control-labe ef" name="exp" rows="6" disabled>{{book_data.exp|safe}}</textarea>
+                        <label class="text_label">説明 :</label>
+                      {% else %}
+                        <textarea id="exp" class="control-labe ef" name="exp" rows="6" disabled>{{book_data.exp|safe}}</textarea>
+                        <label class="text_label">説明 :</label>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                  <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                    {% if book_data.page %}
+                    <input id="page" class="control-label ef" type="number" name="page" value="{{book_data.page}}" disabled>
+                    <label>ページ :</label>
+                    {% endif %}
+                  </div>
+                  <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                    {% if book_data.publisheddate %}
+                    <input id="publisheddate" class="control-label ef" type="text" name="publisheddate" value="{{book_data.publisheddate}}">
+                    <label>発売日 :</label>
+                    {% endif %}
+                  </div>
+                  <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+                    {% if book_data.label %}
+                    <input id="label" type="text" class="control-label ef" name="label" value="{{book_data.label}}">
+                    <label>レーベル :</label>
+                    {% endif %}
+                  </div>
+                  <br>
+                  <div class="form-group col-md-12 col-xs-12 cp_iptxt image">
+                    {% if book_data.piclink %}
+                    <img src= {{book_data.piclink}} class="img-thumbnail">
+                    {% endif %}
+                  </div>
+                </details>
+                <div id="button">
+                  <button onclick="history.back()" class="btn btn-primary">{{back}}</button>
+                  <button type = "button" class="btn btn-success camera_check">{{goto}}</button>
+                </div>
+              </div>
+            </div>
+    </body>
+    
+  <script>
+    function func1(e) {
+      e.classList.toggle("active");
+    }
+  </script>
+  <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+</html>

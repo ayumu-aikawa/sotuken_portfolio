@@ -1,0 +1,87 @@
+body p{
+	font-size: 15px;
+}
+.search{
+	margin: 0 8%;
+	padding: 0em 1em;
+	color: #474747;
+	background: whitesmoke;/*背景色*/
+	opacity: 0.9;
+	border-left: double 7px #4ec4d3;/*左線*/
+	border-right: double 7px #4ec4d3;/*右線*/
+}
+.search p{
+	padding-top: 5px;
+	font-size: 15px;
+}
+.search a{
+	padding-top: 10px;
+	font-size: 15px;
+}
+.search .title{
+	padding: 15px;
+	font-size: 18px;
+	border-bottom: double 2px #4ec4d3;
+}
+.search .number{
+	padding: 10px 0 20px 0;
+}
+.search .detail{
+	padding: 15px 10px 5px 10px;
+	border-bottom: 1px dotted #4ec4d3;
+}
+.search .detail:hover{ 
+	background-color: #e4f4f5;
+}
+.col-xs-12{
+	width: 100%;
+}
+.button_c{
+	text-align: center;
+	right: 0%;
+}
+.col-xs-12 .btn{
+	right: 0;
+	text-align: center;
+}
+.message{
+  display: flex;
+  justify-content: center;
+}
+.message ul{
+  padding-inline-start: 0px;
+}
+.message ul li{
+  width: 100%;
+}
+.center{
+	text-align: center;
+}
+@media screen and (min-width: 660px) and (max-width: 767px){
+	.search{
+    margin: 0 3%;
+  }
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+	}
+	.button_c{
+		text-align: center;
+		right: 0;
+	}
+}
+@media screen and (max-width: 660px) {
+  .search{
+    margin: 0 3%;
+  }
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+	}
+	.button_c{
+		text-align: center;
+		right: 0;
+	}
+}

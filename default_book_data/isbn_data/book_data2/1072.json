@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784873118413,
+    "タイトル": "Pythonデータサイエンスハンドブック",
+    "サブタイトル": "Jupyter、NumPy、pandas、Matplotlib、scikit-learnを使ったデータ分析、機械学習－",
+    "著者": "Jake VanderPlas,菊池 彰",
+    "出版社": "株式会社オーム社",
+    "説明": "Pythonでデータ分析や機械学習を行うためのリファレンス！\nPythonのデータサイエンス用のツールを使いこなし、効率よく仕事を進めるための、実用的な情報が詰め込まれたリファレンスです。IPythonとJupyter、NumPy、pandas、matplotlib、scikit-Learnをカバーします。それぞれのトピックについて、押さえておくべき基本、tips、便利なコマンドなどを紹介します。普段、Pythonで、データの操作、変換、可視化、統計的処理、データモデルの構築、科学計算を行う人にとって必須のリファレンスです。",
+    "言語": "jpn",
+    "ページ数": "560",
+    "発売日": "20180526",
+    "レーベル": "",
+    "値段": 4200,
+    "画像URL": "http://books.google.com/books/content?id=ERyPtwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "大分類": 8,
+    "中分類": 8,
+    "小分類": 1072
+}

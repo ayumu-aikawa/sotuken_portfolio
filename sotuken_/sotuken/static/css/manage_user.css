@@ -1,0 +1,41 @@
+.display{
+  margin: 0 5%;
+  padding: 1em 1em;
+}
+.display h2{
+  color: orange;
+  text-align: center;
+}
+.display .box{
+  display: flex;
+  justify-content: space-between;
+}
+.display .btn_long{
+  letter-spacing: 0.1em;
+  text-indent: 0.1em;
+}
+.table .btn{
+  margin-top: 0px;
+  width: 7.2em;
+  height: 2.5em;
+  margin: 1px;
+}
+.table td:nth-child(1) {
+	width: 6em;
+}
+.table td:nth-child(2) {
+  text-align: center;
+  width: 5em;
+}
+.table td:nth-child(3) {
+  text-align: center;
+  width: 10em;
+}
+.table td:nth-child(4) {
+  text-align: center;
+  width: 8em;
+}
+.table td:nth-child(5) {
+  text-align: center;
+  width: 6em;
+}

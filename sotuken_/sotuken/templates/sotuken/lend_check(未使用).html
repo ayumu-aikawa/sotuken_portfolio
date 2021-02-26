@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+</head>
+<body class="container">
+<!--if 複数冊存在する場合表示
+    <p>{{msg1|safe}}</p>
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/json.js"></script>
+    <div>
+        <p id="thumbnail"></p>
+    </div>
+    <div align="center">
+    <div>
+        書籍名：<input id="title" type="text" name="title" value={{id_num}} class="t">
+    </div>
+
+    <div>
+        出版社：<input id="publisher" type="text" name="publisher" value="" >
+    </div>
+
+    <div>
+        巻：<input id="volume" type="text" name="volume" value="" >
+    </div>
+
+    <div>
+        シリーズ：<input id="series" type="text" name="series" value="" >
+    </div>
+
+    <div>
+        著者：<input id="author" type="text" name="author" value="" >
+    </div>
+
+    <div>
+        出版日：<input id="pubdate" type="text"  name="pubdate" value="" >
+    </div>
+
+    <div>
+        サムネイルURI：<input id="cover" type="text" name="cover" value="" >
+    </div>
+
+    <div>
+        詳細：<textarea id="description" type="text" name="description" value="" ></textarea>
+    </div>
+
+    <form action="{% url 'lend_comp' %}" method="post" class="w-50">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+    <hr>
+
+    <p>{{msg2}}</p>
+    <button type="button" class="btn btn-outline-success w-10"onclick="location.href='{% url 'lend_comp' %}'">{{yes}}</button>
+    <button type="button" class="btn btn-outline-success w-25"onclick="location.href='{% url 'camera_check' %}'">{{no}}</button>
+
+</body>
+
+</html>

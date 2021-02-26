@@ -1,0 +1,116 @@
+h2{
+  color: orange;
+}
+.ef ~ .focus_line {
+	background-color: orange;
+}
+.ef:focus ~ label, .cp_iptxt.ef ~ label {
+	color: orange;
+}
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+	background: orange;
+}
+.display{
+	margin: 0 8%;
+	padding: 0em 1em;
+	color: #474747;
+	background: whitesmoke;/*背景色*/
+	opacity: 0.9;
+	border-left: double 7px orange;/*左線*/
+	border-right: double 7px orange;/*右線*/
+}
+.display tr{
+	padding: 10px;
+	border-top: 1.5px dotted orange;
+	border-bottom: 1.5px dotted orange;
+	font-size: 15px;
+}
+.display .table tr{
+	padding: 20px 10px;
+}
+.display .table tr:hover:not(.not_color){
+	background-color: #FDF5E6;
+}
+.display .table .not_color{
+	border-bottom: double 2px orange;
+	border-top: double 1px orange;
+}
+.display .table{
+	border: double 2px orange;
+}
+.display .table th{
+	border-right: 1px solid orange;
+	border-left: 1px solid orange;
+	text-align: center;
+}
+.display .table td{
+	padding: 20px 10px;
+	vertical-align: middle;
+	border-right: 1px solid orange;
+	border-left: 1px solid orange;
+}
+.display a{
+	padding: 10px;
+	font-size: 15px;
+}
+.display .title{
+	padding: 15px;
+	font-size: 18px;
+	border-bottom: double 2px orange;
+}
+.display .number{
+	padding: 10px 0 20px 0;
+}
+.form .btn{
+	margin: 10px 0 0 40px;
+}
+.form .exp{
+	width: 100%;
+}
+.table td:nth-child(1) {
+	text-align: center;
+}
+.form .right{
+	text-align: center;
+	padding-right: 3%;
+}
+
+@media screen and (max-width: 640px) {
+	th, td {
+		display: block;
+		width: 100%;
+		text-align: center;
+		border-bottom: solid 1px orange;
+		}
+		/*input*/
+	.cp_iptxt {
+		width: 100%;
+	}
+	.cp_iptxt input[type='text'] {
+		width: 100%;
+	}
+	.cp_iptxt input[type='number'] {
+		width: 100%;
+	}
+	.cp_iptxt textarea {
+		width: 100%;
+	}
+	.ef:focus ~ .focus_line,
+	.cp_iptxt.ef ~ .focus_line {
+		width: 100%;
+	}
+	/*select*/
+	.cp_ipselect {
+		width: 100%;
+	}
+	.cp_sl06 {
+		width: 100%;
+		padding: 10px 28px 5px 1em;
+	}
+	.cp_ipselect:after {
+		right: 3%;
+	}
+	.cp_sl06_selectbar {
+		width: 100%;
+	}
+}

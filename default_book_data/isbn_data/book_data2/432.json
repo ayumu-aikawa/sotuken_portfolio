@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784774184265,
+    "タイトル": "プロのためのLinuxシステム構築・運用技術",
+    "サブタイトル": "システム構築運用/ネットワーク・ストレージ管理の秘訣がわかる : キックスタートによる自動インストール、運用プロセスの理解、SAN/iSCSI、L2/L3スイッチ、VLAN,Linuxカーネル、systemd、ファイルシステム、問題判別ノウハウ、プロとしてのLinux技術",
+    "著者": "中井 悦司",
+    "出版社": "技術評論社",
+    "説明": "キックスタートによる自動インストール、運用プロセスの理解、SAN/iSCSI、L2/L3スイッチ、VLAN、Linuxカーネル、systemd、ファイルシステム、問題判別ノウハウ、プロとしてのLinux技術。システム構築運用/ネットワーク・ストレージ管理の秘訣がわかる。Red Hat Enterprise Linux対応。",
+    "言語": "jpn",
+    "ページ数": "257",
+    "発売日": "",
+    "レーベル": "Software Design plusシリーズ",
+    "値段": 2980,
+    "画像URL": "http://books.google.com/books/content?id=vzpYvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "大分類": 2,
+    "中分類": 2,
+    "小分類": 432
+}

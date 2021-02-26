@@ -1,0 +1,70 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/button.css' %}" rel="stylesheet">
+    <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+    <link href="{% static 'css/isbn_load.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <!--link href="css/more_btn.css" rel="stylesheet"-->
+    <title>貸出確認画面</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="form-row form">
+      <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+        <input id="isbn" class="control-label ef" type="number" name="title" value="{{isbn13}}" disabled>
+        <label>ISBN :</label>
+      </div>
+      <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+        <input id="title" class="control-label ef" type="text" name="title" value="{{b_title}}" disabled>
+        <label>タイトル :</label>
+      </div>
+      <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+        <input id="authors" class="control-label ef" type="text" name="authors" value="{{authors}}" disabled>
+        <label>著者 :</label>
+      </div>
+      <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+        <input id="publisher" class="control-label ef" type="text" name="publisher" value="{{publisher}}" disabled>
+        <label>出版社 :</label>
+      </div>
+      <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+        <input id="returndate" class="control-label ef" type="text" name="returndate" value="{{returnyear}}/{{returnmonth}}/{{returnday}}" disabled>
+        <label>返却期日 :</label>
+      </div>
+      <script type="text/javascript" src="{% static 'js/isbn_load.js' %}"></script>
+      <!--script type="text/javascript" src="js/more_btn.js"></script-->
+      <form action = "{% url 'lend_comp' %}" method ="post">
+        {% csrf_token %}
+        {% if 2 <= hitnum %}
+        <p><div align="center" style="color:blue"><font size="4">
+            {{msg1|safe}}</font></p>
+            <input id="input_num" input type = "number" name = "input_num" required = "true" val="" style="color:black"></input>
+          </div>
+        {% endif %}
+
+        <div style="display:none">
+          <input id= "isbn" name = "isbn" value= {{isbn13}}>
+        </div>
+        <u><p align="center" style="color: rgb(235, 12, 12);"><font size="5">{{msg2|safe}}</font></p></u>
+        <div id="button"align="center">
+          {% if lend_success == 1 %}
+            <button type = "button" class="btn btn-primary"onclick=history.back()>{{no}}</button>
+            <button type = "submit" class="btn btn-success" >{{yes}}</button>
+          {% else %}{% if lend_success == 0 %}
+            <button type = "button" class="btn btn-primary"onclick=history.back()>{{no}}</button>
+            <button type = "submit" class="btn btn-success not_btn" disabled value = {{yes}} >{{yes}}</button>
+          {% endif %}{% endif %}
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+  </body>
+</html>

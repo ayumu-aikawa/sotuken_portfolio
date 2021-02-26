@@ -1,0 +1,10 @@
+bootstrap4
+django_widget_tweaks
+requests
+mysql.connector
+django-glrm
+django-user-agents
+schedule
+mysql
+django_request
+mysql

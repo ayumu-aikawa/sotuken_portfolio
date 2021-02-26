@@ -1,0 +1,175 @@
+/*input*/
+.cp_iptxt {
+	position: relative;
+	width: 100%;
+	margin: 10px 0;
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 5em;
+	margin-right: 2em;
+	text-align: right;
+	padding-right: 1em;
+}
+.cp_iptxt input[type='number'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 5em;
+}
+.cp_iptxt textarea {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+  padding:0 1em 0 2em;
+	text-align: left;
+	transition: 0.4s;
+	border: 1px solid #1b2538;
+  display:block;
+  margin-top: 2em;
+}
+
+summary{
+  background-color: #e8f7ff;
+  text-align: center;
+  opacity: 0.8;
+}
+.form #lend1{
+  text-align: center;
+}
+.form-row {
+  display: inherit;
+}
+.form #button{
+  text-align: center;
+}
+.label{
+  padding: .3em .6em .3em;
+}
+.form .btn{
+	right: 0;
+	opacity: 1;
+		text-align: center;
+		letter-spacing: 1em;
+		text-indent: 1em;
+}
+.form .image{
+  text-align: center;
+}
+.form{
+	background-color: #f7ffff;
+	opacity: 0.9;
+	border-left: 5px double  /*#b0ffff*/ #4ec4d3;
+	border-right: 5px double #4ec4d3;
+	padding: 1em;
+	margin: 0 8%;
+}
+.form-group{
+	display: inline-block;
+}
+.form .not_btn{
+	opacity: 0.3;
+}
+@media screen and (min-width: 1281px) {
+  .form .btn{
+    width: 200px;
+    height: 55px;
+    margin: 30px 30px 30px 30px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1280px){
+  .form .btn{
+    width: 150px;
+    height: 45px;
+    margin: 20px 20px 20px 20px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 767px) {
+  .display{
+    margin: 0 3%;
+    padding: 0.5em 1em;
+  }
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+  }
+  .form{
+    margin: 3% 0;
+  }
+  .form .btn{
+    width: 175px;
+    height: 50px;
+    margin: 15px 9px;
+    font-size: 20px;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .cp_iptxt input[type='text'] {
+    padding-left: 1em;
+  }
+  .cp_iptxt input[type='number'] {
+    padding-left: 1em;
+  }
+  .cp_iptxt textarea {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding:0 1em 0 2em;
+    text-align: left;
+    transition: 0.4s;
+    border: 1px solid #1b2538;
+    display:block;
+    margin-top: 2em;
+  }
+  .ef ~ label {
+    top: -18px;
+  }
+  .ef ~ .text_label{
+    top: 3px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .display{
+    margin: 0 3%;
+    padding: 0.5em 1em;
+  }
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+  }
+  .form{
+    margin: 3% 0;
+  }
+  .form .btn{
+    width: 130px;
+    height: 44px;
+    margin: 15px 9px;
+    font-size: 20px;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .cp_iptxt input[type='text'] {
+    padding-left: 1em;
+  }
+  .cp_iptxt input[type='number'] {
+    padding-left: 1em;
+  }
+  .ef ~ label {
+    top: -18px;
+  }
+  .ef ~ .text_label{
+    top: 3px;
+  }
+}

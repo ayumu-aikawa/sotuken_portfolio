@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ログイン画面{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+{% block content %}
+
+  <div class="message">
+    {% if messages %}
+    <ul class="messages_ul">
+        {% for message in messages %}
+            <li class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span></button>{{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+      <h2>すでにログイン済みです</h2>
+      <div class="center">
+        <button type="button" class="btn btn-success btn_long"onclick="location.href='{% url 'home' %}'">TOP</button>
+      </div>
+    {% else %}
+      <input type="hidden" name="next" value="{{ next }}">
+      {% include 'form.html' %}
+      <div class="center">
+        <button type="submit" class="btn btn-success btn_long">ログイン</button>
+      </div>
+    {% endif %}
+    </form>
+{% endblock %}

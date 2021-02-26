@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784797390537,
+    "タイトル": "詳解Swift 第3版",
+    "サブタイトル": "Programming Language Swift Definitive Guide",
+    "著者": "荻原 剛志",
+    "出版社": "SBクリエイティブ",
+    "説明": "日本でいちばん詳しいSwift解説書が、新バージョンSwift3\nに対応して登場。\niOS、macOS用アプリを開発するすべての人、必携の一冊。\n\nCHAPTER01 Swiftでプログラミング\nCHAPTER02 関数\nCHAPTER03 構造体\nCHAPTER04 オプショナル\nCHAPTER05 基本的なデータ型\nCHAPTER06 パターン\nCHAPTER07 演算子\nCHAPTER08 クラスと継承\nCHAPTER09 メモリ管理\nCHAPTER10 プロトコル\nCHAPTER11 拡張\nCHAPTER12 エラー処理\nCHAPTER13 クロージャ\nCHAPTER14 ジェネリクス\nCHAPTER15 C/Objective-Cとのデータ受け渡し\nCHAPTER16 Objective-Cとの連携\nCHAPTER17 コーディングとデバッグ\nAPPENDIX    A.Swiftの標準ライブラリ\n              B.構文図\n",
+    "言語": "jpn",
+    "ページ数": "536",
+    "発売日": "20161228",
+    "レーベル": "",
+    "値段": 3200,
+    "画像URL": "https://cover.openbd.jp/9784797390537.jpg",
+    "大分類": 8,
+    "中分類": 2,
+    "小分類": 341
+}

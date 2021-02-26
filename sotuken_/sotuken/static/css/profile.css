@@ -1,0 +1,53 @@
+.form-row{
+  display: flex;
+}
+.form h3{
+  text-align: center;
+  color: #4ec4d3;
+  width: 100%;
+  margin-left: 0;
+}
+.display .center{
+  text-align: center;
+}
+.form .btn{
+  right: 0;
+}
+@media screen and (min-width: 1281px) {
+  .btn{
+    width: 200px;
+    height: 55px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1280px){
+  .btn{
+    width: 180px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 767px) {
+  .btn{
+    width: 180px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .btn{
+    width: 140px;
+    height: 44px;
+  }
+  body{
+    padding-top: 100px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .display .cp_iptxt {
+		position: relative;
+		width: 100%;
+    margin: 20px 15%;
+    max-width: 78%;
+  }
+  .form h3{
+    font-size: 28px;
+  }
+}

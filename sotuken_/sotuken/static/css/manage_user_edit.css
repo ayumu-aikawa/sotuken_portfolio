@@ -1,0 +1,116 @@
+.form{
+  margin: 3% 10%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.form-row{
+	display: revert;
+}
+.form h2{
+  text-align: center;
+  color: orange;
+}
+.form h3{
+  text-align: center;
+  margin-left: 0;
+}
+.form .btn{
+  right: 0;
+}
+.button_center{
+	text-align: center;
+	width: 100%;
+	margin: 1em auto;
+}
+.cp_iptxt {
+	position: relative;
+	width: 100%;
+	margin: 10px 0;
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 5em;
+	margin-right: 2em;
+	text-align: right;
+	padding-right: 1em;
+}
+.cp_iptxt input[type='email'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 5em;
+	margin-right: 2em;
+	text-align: right;
+	padding-right: 1em;
+}
+.cp_iptxt input[type='number'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 5em;
+}
+.cp_iptxt textarea {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 90%;
+	letter-spacing: 1px;
+  padding:0 1em 0 2em;
+	text-align: left;
+	transition: 0.4s;
+	border: 1px solid #1b2538;
+	display:block;
+}
+.cp_iptxt input[type='text']:focus {
+	outline: none;
+}
+.cp_iptxt input[type='email']:focus {
+	outline: none;
+}
+.cp_iptxt input[type='number']:focus {
+	outline: none;
+}
+.cp_iptxt textarea:focus {
+	outline: none;
+}
+.ef {
+	padding: 4px 0;
+	border: 0;
+	border-bottom: 1px solid #1b2538;
+	background-color: transparent;
+	text-align: right;
+}
+.ef ~ .focus_line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	transition: 0.4s;
+	background-color: orange;
+}
+.ef:focus ~ .focus_line,
+.cp_iptxt.ef ~ .focus_line {
+	width: 100%;
+	transition: 0.4s;
+}
+.ef ~ label {
+	position: absolute;
+	z-index: -1;
+	top: 4px;
+	left: 0;
+	width: 95%;
+	transition: 0.3s;
+	letter-spacing: 0.5px;
+	color: #1b2538;
+}
+.ef:focus ~ label, .cp_iptxt.ef ~ label {
+	font-size: 12px;
+	top: -16px;
+	transition: 0.3s;
+	color: orange;
+}

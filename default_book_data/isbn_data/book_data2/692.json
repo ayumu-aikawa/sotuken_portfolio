@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784797385298,
+    "タイトル": "JavaデベロッパーのためのEclipse完全攻略 4.x対応版",
+    "サブタイトル": "",
+    "著者": "石黒 尚久,永井 正昭",
+    "出版社": "SBクリエイティブ",
+    "説明": "Eclipseを使った開発の「基礎の基礎」から、ビルドツール、デバッグ、\nチーム開発、Webアプリケーション、プラグイン開発まで、Eclipseの\nすべてがわかります。新人エンジニアもベテランエンジニアも必携の一冊!!\n\n本文中で解説しているツールは以下の通りです。\n\n・Pleiades\n・WTP\n・Tomcat\n・GlassFish\n・MySQL\n・Struts\n・CVS\n・Subversion\n・Git\n・JUnit\n・jadclipse\n・Gradle\n・AmaterasUML\n・SWTとWindow Builder\n・PDE\n\nEclipse 4.5以降に対応。\n",
+    "言語": "jpn",
+    "ページ数": "530",
+    "発売日": "20150928",
+    "レーベル": "",
+    "値段": 2800,
+    "画像URL": "https://cover.openbd.jp/9784797385298.jpg",
+    "大分類": 8,
+    "中分類": 5,
+    "小分類": 692
+}

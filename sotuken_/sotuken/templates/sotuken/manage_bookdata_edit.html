@@ -1,0 +1,192 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>{{title}}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link href="{% static 'css/returns.css' %}" rel="stylesheet">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/button.css' %}" rel="stylesheet">
+    <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+    <link href="{% static 'css/manage_bookdata_edit.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $(".close").click(function(){
+                $(".alert").hide();
+            })
+        })
+    </script>
+</head>
+<body class="container">
+  {% include 'header.html' %}
+    <h2 class="display-4" align="center">
+      {{title}}</h2>
+    <div class="form-row form">
+      <p class="text-muted">ページを更新すると項目が元に戻ります。</p>
+      <p class="text-muted">*は入力必須項目です</p>
+      <p>小分類番号:{{bookobj.smallcat}} タイトル:{{bookobj.title_long}} の内容を編集</p>
+      <form action = "{% url 'manage_bookdata_edit_comp' %}" method ="post" class="form-horizontal">
+        {% csrf_token %}
+        <div style="display:none">
+          <input id= "smallcat" name = "smallcat" value= {{bookobj.smallcat}}>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type = "number" name = "isbn13" required = "true" value ="{{bookobj.isbn13}}" autocomplete="off">
+          <label>ISBN13*</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="text" name = "title" value="{{bookobj.title}}" required = "true"  autocomplete="off">
+          <label>タイトル*</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="text" name = "title_long" value="{{bookobj.title_long}}" required = "true" autocomplete="off">
+          <label>長タイトル(タイトル + サブタイトル)*</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-6 col-xs-12 cp_iptxt">
+          <select name = "bigcat" id = "bigcat" class="cp_sl06" onchange = "createmidcat(this.value)" autocomplete="off">
+            {% for item_b in bigcat_list %}
+              {% if item_b.bigcat == bookobj.bigcat %}
+              <option value="{{item_b.bigcat}}" selected>{{item_b.bigcat}} {{item_b.catname}}</option>
+              {% else %}
+                <option value="{{item_b.bigcat}}" >{{item_b.bigcat}} {{item_b.catname}}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <span class="cp_sl06_highlight"></span>
+          <span class="cp_sl06_selectbar"></span>
+          <label class="control-label cp_sl06_selectlabel" autofocus="false">
+            大分類
+          </label>
+        </div>
+        <div class="form-group col-md-6 col-xs-12 cp_iptxt">
+          <select name = "midcat" id = "midcat" class="cp_sl06"></select>
+          <span class="cp_sl06_highlight"></span>
+          <span class="cp_sl06_selectbar"></span>
+          <span class="arrow_box">中分類は番号が一意の物ではないので、番号が同じカテゴリが自動で選択されています</span>
+          <label class="control-label cp_sl06_selectlabel">
+            中分類
+          </label>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="text" name = "authors"  value ="{{bookobj.authors}}" autocomplete="off">
+          <label>著者</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="text" name = "publisher" value ="{{bookobj.publisher}}" autocomplete="off">
+          <label>出版社</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-4 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="text" name = "lang" value ="{{bookobj.lang}}" autocomplete="off">
+          <label>言語</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-4 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="number" name = "page" value ="{{bookobj.page}}" autocomplete="off" required = "true">
+          <span class="arrow_box">不明の場合は0を入力してください</span>
+          <label>ページ数*</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-4 col-xs-12 cp_iptxt">
+        <input class="control-label ef" type="text" name = "publisheddate" value ="{{bookobj.publisheddate}}" autocomplete="off">
+        <label>発売日</label>
+        <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-8 col-xs-12 cp_iptxt">
+        <input class="control-label ef" type="text" name = "label" value ="{{bookobj.label}}" autocomplete="off">
+        <label>レーベル</label>
+        <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-4 col-xs-12 cp_iptxt">
+          <input class="control-label ef" type="number" name = "price" value ="{{bookobj.price}}" autocomplete="off" required = "true">
+          <label>値段*</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <input type = text class="control-label ef" name = "piclink"value ="{{bookobj.piclink}}" autocomplete="off">
+
+          <label>表紙の画像</label>
+          <span class="focus_line"></span>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 cp_iptxt">
+          <textarea class="control-labe ef" name = "exp" autocomplete="off" rows="6">{{bookobj.exp}}</textarea>
+          <label>説明</label>
+          <!--span class="focus_line"></span-->
+        </div>
+        <div>
+          {% if bookobj.deleteflag == 1 %}
+            <input type="checkbox" id="check01" name="deleteflag" value="1" checked="checked">
+            <label for="check01" class="checkbox">削除フラグ(チェックを入れると貸出、検索ができなくなります)</label>
+          {% else %}
+            <input type="checkbox" id="check02" name="deleteflag" value="1">
+            <label for="check02" class="checkbox">削除フラグ(チェックを入れると貸出、検索ができなくなります)</label>
+          {% endif %}
+        </div>
+        <div class="button_c">
+          <button type = "button" onclick="history.back()" class="btn btn-primary">{{back}}</button>
+          <button type = "submit" class="btn btn-success">{{yes}}</button>
+        </div>
+      </form>
+
+      <div class="button_c">
+        <form action = "{% url 'manage_bookdata_delete' %}" method ="post" class="form-horizontal">
+          {% csrf_token %}
+          <div style="display:none">
+            <input id= "smallcat" name = "smallcat" value= {{bookobj.smallcat}}>
+          </div>
+          <button type = "submit" class="btn btn-warning btn_long">{{p_delete}}</button>
+        </form>
+      </div>
+
+    </div>
+    <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+    <script>
+      $("#acMenu dt").on("click", function() {
+      $(this).next().slideToggle(120);
+      });
+
+      const midcat_list = {{midcat_dic|safe}};
+
+
+      function createmidcat(selectBigcat){
+
+          let midList = document.getElementById('midcat');
+          midList.disabled = false;
+          midList.innerHTML = '';
+          // let option = document.createElement('option');
+          // option.innerHTML = '';
+          // option.defaultSelected = true;
+          // option.disabled = false;
+          // midList.appendChild(option);
+
+          midcat_list[selectBigcat].forEach( midcat => {
+              let option = document.createElement('option');
+              option.innerHTML = midcat["num"] + ' ' +midcat["name"];
+              option.defaultSelected = midcat["selected"];
+              option.value = midcat["num"];
+              midList.appendChild(option);  
+          });
+          // 
+          //     let option = document.createElement('option');
+          //     option.innerHTML = {};
+          //      option.value = midcat[value];
+          //      midList.appendChild(option);
+          //
+      }
+
+      window.onload = createmidcat({{bookobj.bigcat}});
+      </script>
+</body>
+
+</html>

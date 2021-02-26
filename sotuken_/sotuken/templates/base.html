@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+  <html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  <link rel="stylesheet" 
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  crossorigin="anonymous">
+  <link href="{% static 'css/header.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/button.css' %}" rel="stylesheet">
+  <link href="{% static 'css/top.css' %}" rel="stylesheet">
+  <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+  {% block styles %}{% endblock %}
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">  
+</head>
+
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- navbar-inverse で黒系ナビゲーションの指定をしています。-->
+  <!-- navbar-fixed-top でヘッダー固定の指定をしています。-->
+  <h3>
+    <a href="{% url 'home' %}">BOOK ON</a>
+  </h3>
+  <nav class="pc-nav">
+    {% if user.is_authenticated %}
+    <ul class="menu">
+      <li><a href="{% url 'book' %}">図書</a>
+         <ul class="dropdwn_menu">
+            <li><a class="camera_check" href="#">貸出</a></li>
+            <li><a href="{% url 'returns' %}">返却</a></li>
+            <li><a href="{% url 'search' %}">検索</a></li>
+            {% if user.is_superuser %}
+            <li><a href="{% url 'manage' %}">管理</a></li>
+            {% endif %}
+         </ul>
+      </li>
+      <li><a href="{% url 'profile' %}">{{user.shortname}}</a>
+         <ul class="dropdwn_menu">
+            <li><a href="{% url 'lendhistory' %}">貸出履歴</a></li>
+            <li><a href="{% url 'password_change' %}">パスワード変更</a></li>
+            <li><a href="{% url 'contact' %}">お問い合わせ</a></li>
+         </ul>
+      </li>
+      <li><a href="{% url 'logout' %}">ログアウト</a></li>
+    </ul>
+    {% else %}
+    <ul class="menu">
+      <li><a href="{% url 'login' %}">ログイン</a></li>
+      <li><a href="{% url 'password_reset' %}">パスワード<br>リセット</a></li>
+    </ul>
+    {% endif %}
+  </nav>
+  <nav class="sp-nav">
+    {% if user.is_authenticated %}
+      <li class="close"><span></span></li>
+      <ul>
+        <li><a href="{% url 'book' %}">図書</a></li>
+        <li><a href="{% url 'profile' %}">プロフィール</a></li>
+        <li><a href="{% url 'lendhistory' %}">貸出履歴</a></li>
+        <li><a href="{% url 'contact' %}">お問い合わせ</a></li>
+        <li><a href="{% url 'password_change' %}">パスワード変更</a></li>
+        <li><a href="{% url 'logout' %}">ログアウト</a></li>
+      </ul>
+  </nav>
+  <!--div id="hamburger">
+      <span></span>
+  </div-->
+    {% else %}
+      <li class="close"><span></span></li>
+      <ul>
+        <li><a href="{% url 'login' %}">ログイン</a></li>
+        <li><a href="{% url 'password_reset' %}">パスワードリセット</a></li>
+      </ul>
+    {% endif %}
+   </nav>
+   <div id="hamburger">
+      <span></span>
+   </div>
+</header>
+
+<body>
+  <div class="container">
+    <div class="inner">
+      <div class="text-right">{{ form_name }}</div>
+      <div class="row header mysystem-header">
+        <div class="col-sm title">
+          
+        </div>
+      </div>
+      <br>
+      <div class="content lead display">
+        <h3 class="text-primary">{% block headertitle %}{% endblock %}</h3>
+          <p>{% block content %}{% endblock %}</p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+</body>
+</html>

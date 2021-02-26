@@ -1,0 +1,10 @@
+__pycache__
+migrations
+staticfiles
+local_settings.py
+backends.py
+db.sqlite3
+*.py[co]
+.vscode/
+sent_emails
+settings.py

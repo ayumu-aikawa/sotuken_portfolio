@@ -1,0 +1,17 @@
+{
+    "ISBN": 9784844381679,
+    "タイトル": "Amazon Web Servicesネットワーク入門",
+    "サブタイトル": "Introducing Amazon Virtual Private Cloud Connectivity : 初めて作るクラウドインフラ",
+    "著者": "大沢 文孝,大澤 文孝",
+    "出版社": "インプレス",
+    "説明": "AWSのVirtual Private Cloudサービスを基礎から解説。VPC領域の作成・EC2インスタンスへのIPアドレスの割り当て。セキュリティ機能・プライベートなネットワーク運用。DNSサーバーと独自ドメインの運用。",
+    "言語": "jpn",
+    "ページ数": "207",
+    "発売日": "",
+    "レーベル": "impress top gear",
+    "値段": 2500,
+    "画像URL": "http://books.google.com/books/content?id=2VVpDQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "大分類": 3,
+    "中分類": 2,
+    "小分類": 387
+}

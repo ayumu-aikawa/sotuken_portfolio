@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center logo my-4">
+    <a>新規登録</a>
+  </h1>
+  <div class="row justify-content-center">
+    <div class="bkg_c">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% include 'form.html' %}
+            <div class="center">
+              <button type="submit" class="btn btn-primary btn_long">アカウント作成</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          すでにアカウントがありますか？ <a href="{% url 'login' %}">ログイン</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+.btn{
+  opacity: 0.9;
+  text-align: center;
+  letter-spacing: 2em;
+  text-indent: 2em;
+}
+body{
+  padding-top: 90px;
+}
+@media screen and (min-width: 1281px) {
+  .btn{
+    width: 400px;
+    height: 110px;
+    margin: 30px 200px 30px 200px;
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1280px){
+  .btn{
+    width: 300px;
+    height: 80px;
+    margin: 20px 170px 20px 170px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 767px) {
+  .btn{
+    width: 350px;
+    height: 100px;
+    margin: 30px 30px;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .btn{
+    width: 250px;
+    height: 75px;
+    margin: 30px 35px;
+    font-size: 25px;
+  }
+  body{
+    padding-top: 100px;
+  }
+}

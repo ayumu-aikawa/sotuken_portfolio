@@ -1,0 +1,132 @@
+.table {
+	border-collapse: collapse;
+}
+.display{
+	margin: 0 2%;
+	padding: 0em 1em 1em 1em;
+	border-left: double 7px  orange;/*左線*/
+	border-right: double 7px  orange;/*右線*/
+}
+.display h2{
+	color: orange;
+	text-align: center;
+}
+.table th, .table td {
+	border: 1px solid #000;
+}
+.display tr{
+	border-top: 1.5px dotted orange;
+	border-bottom: 1.5px dotted orange;
+}
+.display .table .not_color{
+	border-bottom: double 2px orange;
+	border-top: double 1px orange;
+}
+.display .table{
+	border: double 2px orange;
+}
+.display .table th{
+	border-right: 1px solid orange;
+	border-left: 1px solid orange;
+	text-align: center;
+}
+.display .table td{
+	padding: 20px 10px;
+	vertical-align: middle;
+	border-right: 1px solid orange;
+	border-left: 1px solid orange;
+}
+.display .title{
+	padding: 15px;
+	font-size: 18px;
+	border-bottom: double 2px orange;
+}
+.display .table{
+  border: 2px solid orange;
+}
+.display tr td {
+  border: 1px solid orange;
+}
+
+.display .table tr:hover:not(.not_color){
+	background-color: #FDF5E6;
+}
+.table tr:first-child{
+	background: #ffe7a3;
+}
+.table tr{
+	background: whitesmoke
+}
+.table tbody tr td{
+	font-size: 16px;
+	text-align: center;
+}
+.table td:nth-child(1) {
+  vertical-align: middle;
+  width: 8em;
+}
+.table td:nth-child(2) {
+  vertical-align: middle;
+  width: 8em;
+}
+.table td:nth-child(3) {
+	vertical-align: middle;
+}
+.table td:nth-child(4) {
+	vertical-align: middle;
+  width: 30em;
+}
+.table th {
+	text-align: center;
+}
+.table{
+	opacity: 0.95;
+}
+.btn{
+	opacity: 1;
+	margin: 5px 1em;
+}
+.btn_num{
+	text-align: center;
+}
+
+.center{
+	text-align: center;
+}
+.right{
+	text-align: right;
+}
+
+
+@media screen and (max-width: 767px) {
+	th, td {
+		display: block;
+		width: 100%;
+		text-align: center;
+    border-bottom: solid 1px orange;
+  }
+  .table>tbody+tbody{
+    border-top: 2px solid orange;
+  }
+  .display tr{
+    border-bottom: 1px solid orange;
+    border-top: 2px solid orange;
+  }
+  .display td:last-child{
+    border-bottom: none;
+  }
+  .table>tbody+tbody:last-child{
+    border-top: none;
+  }
+  table thead th {
+    display: none;
+  }
+  table td[data-title]::before {
+    color: orange;
+    content: attr(data-title) " ";
+  }
+  table .br::before{
+    content: "\A";
+    white-space: pre;
+  }
+}

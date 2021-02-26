@@ -1,0 +1,66 @@
+.display{
+	margin: 0 5%;
+	padding: 2em 1em;
+	color: #474747;
+	background: whitesmoke;/*背景色*/
+	opacity: 0.9;
+	border-left: double 7px  orange;/*左線*/
+	border-right: double 7px  orange;/*右線*/
+}
+.display h2{
+  text-align: center;
+  color: orange;
+}
+.display p{
+	padding: 10px;
+	border-bottom: 2px double orange;
+	font-size: 15px;
+	width: 100%;
+}
+.btn{
+  opacity: 1;
+}
+.center{
+  text-align: center;
+}
+
+.cp_iptxt{
+  width: 70%;
+  margin: 3em 15%;
+}
+.cp_iptxt input[type='text']{
+  width: 100%;
+}
+.cp_iptxt input[type='number'] {
+  width: 100%;
+}
+.ef ~ .focus_line{
+  background-color: orange;
+}
+.ef:focus ~ .focus_line,
+.cp_iptxt.ef ~ .focus_line {
+  width: 100%;
+}
+.ef ~ label {
+  width: 85%;
+}
+.ef:focus ~ label, .cp_iptxt.ef ~ label {
+  color: orange;
+}
+
+.cp_ipselect{
+  width: 70%;
+  margin: 3em 15%;
+}
+.cp_sl06{
+  width: 100%;
+}
+.cp_ipselect:after {
+  right: 3%;
+}
+.cp_sl06_selectbar {
+  width: 100%;
+}
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+  background: orange;
+}

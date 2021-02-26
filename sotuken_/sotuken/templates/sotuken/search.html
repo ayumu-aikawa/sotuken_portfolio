@@ -1,0 +1,261 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{title}}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/button.css' %}" rel="stylesheet">
+    <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+    <link href="{% static 'css/search.css' %}" rel="stylesheet">
+    <!--<link href="{% static 'css/a.css' %}" rel="stylesheet">-->
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">  
+        <style>
+            .hover-red:hover {
+                color: red;
+            }
+        </style>
+</head>
+    <body class="container">
+        {% include 'header.html' %}
+        <h2 class="display-4 text-primary" align="center">
+            {{title}}</h2>
+            <!--form  action = "{% url 'search' %}">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border w-75" type="search" name="keyword"style="width:45px; height:55px" placeholder="この項目は今死んでます" value="{{request.GET.keyword}}"/>
+                    <div style="display:none">
+                        <input type="search" name = "style" value = "simple">
+                    </div>
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <button type = "submit" class="btn btn-success"style="width:60px; height:45px"><i class= "fa fa-search"></i></button>
+                        </div>
+                    </span>
+                </div>
+            </form-->
+                <div class="form-row form">
+                    <form action = "{% url 'search' %}">
+                    <!--dl id="acMenu">
+                        <dt>詳細検索</dt-->
+                        <!--dd-->
+                        <form class="form-horizontal">
+                            <div class="form-group col-md-6 col-xs-12 cp_iptxt">
+                                <input class="control-label ef" type="text" name = "b_title" value ="{{request.GET.b_title}}">
+                                <label>タイトル</label>
+                                <span class="focus_line"></span>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 cp_iptxt">
+                                <input class="control-label ef" type = "text" name = "authors" value ="{{request.GET.authors}}">
+                                <label>著者</label>
+                                <span class="focus_line"></span>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 cp_iptxt">
+                                <input class="control-label ef" type = "text" name = "publisher" value ="{{request.GET.publisher}}">
+                                <label>出版社</label>
+                                <span class="focus_line"></span>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 cp_iptxt">
+                                <input class="control-label ef" type = "text" name = "label"  value ="{{request.GET.label}}">
+                                <label>レーベル</label>
+                                <span class="focus_line"></span>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 cp_ipselect">
+                                <select name = "bigcat" id = "bigcat" class="cp_sl06"onchange = "createmidcat(this.value)">
+                                    <option></option>
+                                    {% for item_b in bigcat_data %}
+                                        {% if item_b.bigcat == bigcat_p %}
+                                            <option value="{{item_b.bigcat}}" selected>{{item_b.bigcat}} {{item_b.catname}}</option>
+                                        {% else %}
+                                            <option value="{{item_b.bigcat}}" >{{item_b.bigcat}} {{item_b.catname}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <span class="cp_sl06_highlight"></span>
+                                <span class="cp_sl06_selectbar"></span>
+                                <label class="control-label cp_sl06_selectlabel">大分類</label>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 cp_ipselect">
+                                <select name = "midcat" id = "midcat" class="cp_sl06">
+                                    <option></option>
+                                </select>
+                                <span class="cp_sl06_highlight"></span>
+                                <span class="cp_sl06_selectbar"></span>
+                                <label class="control-label cp_sl06_selectlabel">中分類</label>
+                            </div>
+                            <div style="display:none">
+                                <input name = "style" value = "detail">
+                            </div>
+                            <div class="form-group col-md-12 col-xs-12 cp_iptxt exp">
+                                <input class="control-label ef exp_ef" type = "text" name = "exp"  value ="{{request.GET.exp}}">
+                                <label>説明</label>
+                                <span class="focus_line"></span>
+                            </div>
+                            <!--input type = "submit" class="btn btn-success w-30" style="font-size:25px;" value = {{yes}} ></button-->
+                            <div class="form-group col-md-12 col-xs-12 cp_iptxt button_c">
+                                <button type = "button"onclick="location.href='{% url 'book' %}'" class="btn btn-primary">戻る</button>
+                                <button type = "submit" class="btn btn-success btn_long">
+                                    <i class= "fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                        </div> 
+                        <!--/dd>
+                    </dl-->
+                    </form>
+                <div class="message">
+                {% if messages %}
+                    <ul class="messages_ul">
+                        {% for message in messages %}
+                            <li class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}" role="alert"><strong>{{ message }}</strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </div>
+            </div>
+            <p></p>
+            <div class="search">
+            {% if search_flag == 1 %}
+            <p class="title">{{msg1}}の検索結果  {{num}}件中 {{first_num}}-{{last_num}} 件を表示</p>
+                {% for item in book_data %}
+                <div class="detail">
+                    <a href="{% url 'details' item.smallcat %}">{{item.title_long}}</a>
+                    <p>{{item.authors}}</p>
+                </div>
+                {% endfor %}
+                <div class="number" align = "center">
+                {% if page_first %}
+                    <form  action = "{% url 'search' %}" style="display: inline" >
+                        <div class = params style="display:none">
+                        {% if "detail" == request.GET.style %}
+                            <input name="page" value={{page_first}}>
+                            <input name="b_title" value="{{request.GET.b_title}}" >
+                            <input name="authors" value="{{request.GET.authors}}" >
+                            <input name="publisher" value="{{request.GET.publisher}}" >
+                            <input name="label" value="{{request.GET.label}}" >
+                            <input name="exp" value="{{request.GET.exp}}" >
+                            <input name="bigcat" value="{{request.GET.bigcat}}" >
+                            <input name="midcat" value="{{request.GET.midcat}}" >
+                            <!--input name="smallcat" value="{{request.GET.smallcat}}" -->
+                            <!--input name="ISBN" value="{{request.GET.ISBN}}" -->
+                            <input name = "style" value = "{{request.GET.style}}">
+                        {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-success btn_num">
+                            {{page_first}}
+                        </button>
+                        <a> ... </a>
+                    </form>
+                {% endif %}
+                {% for val in page_list %}
+                <form  action = "{% url 'search' %}" style="display: inline" >
+                <div class = params style="display:none">
+                    {% if "detail" == request.GET.style %}
+                    <input name="page" value={{val}}>
+                    <input name="b_title" value="{{request.GET.b_title}}" >
+                    <input name="authors" value="{{request.GET.authors}}" >
+                    <input name="publisher" value="{{request.GET.publisher}}" >
+                    <input name="label" value="{{request.GET.label}}" >
+                    <input name="exp" value="{{request.GET.exp}}" >
+                    <input name="bigcat" value="{{request.GET.bigcat}}" >
+                    <input name="midcat" value="{{request.GET.midcat}}" >
+                    <!--input name="smallcat" value="{{request.GET.smallcat}}" -->
+                    <!--input name="ISBN" value="{{request.GET.ISBN}}" -->
+                    <input name = "style" value = "{{request.GET.style}}">
+                    {% endif %}
+                </div>
+                {% if page_num == val %}
+                <button type="submit" class="page-item disabled page-item active btn btn-success btn_num" disabled>
+                    {{val}}
+                </button>
+                {% else %}
+                <button type="submit" class="btn btn-success btn_num">
+                    {{val}}
+                </button>
+                {% endif %}
+                </form>
+                {% endfor %}
+                {% if page_last %}
+                    <form  action = "{% url 'search' %}" style="display: inline" >
+                        <div class = params style="display:none">
+                            {% if "detail" == request.GET.style %}
+                                <input name="page" value={{page_last}}>
+                                <input name="b_title" value="{{request.GET.b_title}}" >
+                                <input name="authors" value="{{request.GET.authors}}" >
+                                <input name="publisher" value="{{request.GET.publisher}}" >
+                                <input name="label" value="{{request.GET.label}}" >
+                                <input name="exp" value="{{request.GET.exp}}" >
+                                <input name="bigcat" value="{{request.GET.bigcat}}" >
+                                <input name="midcat" value="{{request.GET.midcat}}" >
+                                <!--input name="smallcat" value="{{request.GET.smallcat}}" -->
+                                <!--input name="ISBN" value="{{request.GET.ISBN}}" -->
+                                <input name = "style" value = "{{request.GET.style}}">
+                            {% endif %}
+                        </div>
+                        <a> ... </a>
+                        <button type="submit" class="btn btn-success btn_num">
+                            {{page_last}}
+                        </button>
+                    </form>
+                {% endif %}
+                </div>
+            {% endif %}
+            </div>
+            <script>
+            $("#acMenu dt").on("click", function() {
+            $(this).next().slideToggle(120);
+            });
+            
+
+            const midcat_list = {{midcat_dic|safe}};
+
+
+            function createmidcat(selectBigcat){
+
+                let midList = document.getElementById('midcat');
+                midList.disabled = false;
+                midList.innerHTML = '';
+                let option = document.createElement('option');
+                option.innerHTML = '';
+                option.defaultSelected = true;
+                option.disabled = false;
+                midList.appendChild(option);
+
+                midcat_list[selectBigcat].forEach( midcat => {
+                    let option = document.createElement('option');
+                    option.innerHTML = midcat["num"] + ' ' +midcat["name"];
+                    option.defaultSelected = midcat["selected"];
+                    option.value = midcat["num"];
+                    midList.appendChild(option);  
+                });
+                // 
+                //     let option = document.createElement('option');
+                //     option.innerHTML = {};
+                //      option.value = midcat[value];
+                //      midList.appendChild(option);
+                //
+            }
+
+            window.onload = createmidcat({{request.GET.bigcat}});
+            </script>
+            <!--div align = "center">
+                <button type = "button" class="btn btn-success w-20"  style="font-size:25px;"onclick="location.href = location.pathname" >現在のURLからパラメータを除きジャンプする</button>
+            </div>
+            <div align = "center">
+                <button type = "button" class="btn btn-success w-20"  style="font-size:25px;"onclick="location.href = location.host" >テストボタン</button>
+            </div>
+            <div align = "center">
+                <button type = "button" class="btn btn-success w-20"  style="font-size:25px;"onclick="location.href=location.reload" >テストボタン</button>
+            </div>
+            <div align = "center">
+                <button type = "button" class="btn btn-success w-20"  style="font-size:25px;"onclick="location.href='{% url 'book' %}'" >{{no}}</button>
+            </div-->
+            <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+    </body>
+</html>
