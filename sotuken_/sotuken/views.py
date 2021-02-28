@@ -31,19 +31,19 @@ database = getattr(settings,"DATABASES",None)
 
 #管理者のメールアドレス
 AdminEmail = [
-  'gcf31r@gmail.com',
+  ,
 ]
 
 ###################このアプリケーションのURL※必要に応じて変更する事！##################
-URL_default = "https://hoge.bookon.tokyo"
+URL_default = "https://www.bookon.tokyo"
 
 
 
 #メール送信関数
 def mail_send(to_email,subject,message):
   # SMTP認証情報
-  account = "ookura180shun@gmail.com"
-  password = "dsjioj4q34rjq0934"
+  account = "aaa@aaa.com"#メールアドレス
+  password = "password"#パスワード
 
   from_email = "BOOK ON  メール送信システム<" + account + ">"
   
